@@ -4,8 +4,9 @@
   --bg: #FAF8F5;
   --surface: #F2EDE6;
   --border: #E0D8CE;
-  --primary: #2D6A4F;
-  --accent: #C4714F;
+  --primary: #1A1A1A;
+  --accent: #1DB954;
+  --accent-hover: #17a34a;
   --text: #1C1C1A;
   --muted: #5C564F;
 }
@@ -32,7 +33,7 @@ body {
 }
 
 ::selection {
-  background: #2D6A4F22;
+  background: #1DB95422;
 }
 
 /* Hide scrollbar while keeping scrolling functionality */
