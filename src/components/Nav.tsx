@@ -40,7 +40,7 @@ export function Nav() {
             {/* Logo */}
             <a
               href="/"
-              className="font-[family-name:var(--font-cormorant)] text-2xl font-semibold italic text-[#2D6A4F] tracking-tight shrink-0"
+              className="font-[family-name:var(--font-cormorant)] text-2xl font-semibold italic text-[#1DB954] tracking-tight shrink-0"
             >
               {content.nav.logo}
             </a>
@@ -62,7 +62,7 @@ export function Nav() {
             {/* Desktop CTA */}
             <a
               href="#contact"
-              className="hidden md:inline-flex items-center px-4 py-2 rounded-xl bg-[#2D6A4F] text-white text-[13px] font-semibold hover:bg-[#245940] transition-colors shrink-0"
+              className="hidden md:inline-flex items-center px-4 py-2 rounded-xl bg-[#1A1A1A] text-white text-[13px] font-semibold hover:bg-[#333] transition-colors shrink-0"
             >
               {content.nav.cta}
             </a>
@@ -109,7 +109,7 @@ export function Nav() {
               <a
                 href="#contact"
                 onClick={handleLinkClick}
-                className="flex items-center justify-center w-full mt-4 px-5 py-3 rounded-xl bg-[#2D6A4F] text-white text-sm font-semibold hover:bg-[#245940] transition-colors"
+                className="flex items-center justify-center w-full mt-4 px-5 py-3 rounded-xl bg-[#1A1A1A] text-white text-sm font-semibold hover:bg-[#333] transition-colors"
               >
                 {content.nav.cta}
               </a>
