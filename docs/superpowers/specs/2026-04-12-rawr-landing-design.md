@@ -78,10 +78,8 @@ Section visuelle illustrant les profils :
 - **Label** : "Early Access"
 - **Headline** : "Be the first to find your match."
 - **Sous-headline** : "RAWR is launching soon. Join the waitlist and get access before everyone else."
-- **Formulaire chat** (reprend le composant ChatContactForm existant) avec questions :
-  1. "Hi! What's your name?"
-  2. "Nice to meet you, {name}! What's your email address?"
-  3. "Do you have a dog? Tell us a bit about them! (optional)"
+- **Formulaire chat** (reprend le composant ChatContactForm existant) avec une seule question :
+  1. "What's your email address? We'll let you know when RAWR launches."
 - **Message de fin** : "You're on the list! We'll reach out as soon as RAWR launches. 🐾"
 - Photo de fond : image lifestyle (propriétaire de chien en balade)
 
