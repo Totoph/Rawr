@@ -1,41 +1,41 @@
 "use client"
 
 import { motion } from "framer-motion"
-import { CalendarCheck2, PhoneOff, Sparkles, UserCheck } from "lucide-react"
+import { Dog, ScanHeart, Heart, MapPin } from "lucide-react"
 import { content } from "@/content/en"
 
 const processSteps = [
   {
     number: "01",
-    title: "No Guest Left Behind",
+    title: "Create your profiles",
     description:
-      "Connected to your phone line, Llynne captures missed calls instantly and continues the conversation on WhatsApp.",
-    icon: PhoneOff,
-    iconBg: "from-[#C4714F] to-[#9E583A]",
+      "Build a profile for yourself and one for your dog. Add photos, personality traits, breed, and age — show the world who you both are.",
+    icon: Dog,
+    iconBg: "from-[#1DB954] to-[#17a34a]",
   },
   {
     number: "02",
-    title: "Instant Guest Recognition",
+    title: "Swipe & discover",
     description:
-      "Seconds later, guests receive a personalized message for bookings, opening hours, or private event requests.",
-    icon: UserCheck,
-    iconBg: "from-[#2D6A4F] to-[#1E4D39]",
+      "Browse profiles of dog owners near you. Swipe right when the vibe feels right — for you and your dog.",
+    icon: ScanHeart,
+    iconBg: "from-[#1A1A1A] to-[#333]",
   },
   {
     number: "03",
-    title: "Effortless Reservations",
+    title: "Match & connect",
     description:
-      "Bookings sync into your existing system in real time, while special requests are collected and sent to your team.",
-    icon: CalendarCheck2,
-    iconBg: "from-[#B58A5A] to-[#8F6B42]",
+      "A mutual like is a match. Start a conversation and get to know each other before the first walk.",
+    icon: Heart,
+    iconBg: "from-[#1DB954] to-[#17a34a]",
   },
   {
     number: "04",
-    title: "A Five-Star Experience",
+    title: "Plan your first walk",
     description:
-      "Recover around 50 bookings per month while guests get instant replies and your team avoids phone stress.",
-    icon: Sparkles,
-    iconBg: "from-[#D4A843] to-[#A67C2E]",
+      "Organise your first date — a walk with your dogs. Natural, relaxed, and no pressure.",
+    icon: MapPin,
+    iconBg: "from-[#1A1A1A] to-[#333]",
   },
 ]
 
@@ -51,8 +51,8 @@ export function Benefits() {
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
-            <span className="inline-flex items-center px-3 py-1.5 rounded-full bg-[#C4714F]/10 border border-[#C4714F]/20 mb-1">
-              <span className="text-xs font-medium text-[#C4714F]">{content.benefits.label}</span>
+            <span className="inline-flex items-center px-3 py-1.5 rounded-full bg-[#1DB954]/10 border border-[#1DB954]/20 mb-1">
+              <span className="text-xs font-medium text-[#1DB954]">{content.benefits.label}</span>
             </span>
             <h2 className="mt-4 font-[family-name:var(--font-cormorant)] text-4xl md:text-5xl lg:text-6xl font-bold text-[#1C1C1A] leading-[0.95] max-w-3xl mx-auto">
               {content.benefits.headline}
@@ -65,7 +65,7 @@ export function Benefits() {
           {/* Vertical line — desktop only */}
           <div
             className="hidden md:block absolute left-1/2 top-0 bottom-0 w-px -translate-x-1/2"
-            style={{ background: "linear-gradient(to bottom, transparent, #C4714F50 8%, #C4714F50 92%, transparent)" }}
+            style={{ background: "linear-gradient(to bottom, transparent, #1DB95450 8%, #1DB95450 92%, transparent)" }}
             aria-hidden="true"
           />
 
@@ -85,7 +85,7 @@ export function Benefits() {
                 >
                   {/* Dot on the line — desktop */}
                   <div
-                    className="hidden md:block absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-3.5 h-3.5 rounded-full bg-[#FAF8F5] border-2 border-[#C4714F] z-10"
+                    className="hidden md:block absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-3.5 h-3.5 rounded-full bg-[#FAF8F5] border-2 border-[#1DB954] z-10"
                     aria-hidden="true"
                   />
 
