@@ -87,13 +87,13 @@ export function ChatContactForm() {
   return (
     <div className="flex flex-col h-full max-h-[520px] min-h-[400px]">
       {/* Header */}
-      <div className="flex items-center gap-3 px-5 py-4 bg-[#2D6A4F] rounded-t-2xl">
+      <div className="flex items-center gap-3 px-5 py-4 bg-[#1A1A1A] rounded-t-2xl">
         <div className="w-9 h-9 rounded-full bg-white/20 flex items-center justify-center">
-          <span className="text-white font-[family-name:var(--font-cormorant)] text-lg font-bold italic">L</span>
+          <span className="text-white font-[family-name:var(--font-cormorant)] text-lg font-bold italic">R</span>
         </div>
         <div>
-          <div className="text-white text-sm font-semibold">Llynne</div>
-          <div className="text-white/70 text-xs">Let&apos;s talk</div>
+          <div className="text-white text-sm font-semibold">RAWR</div>
+          <div className="text-white/70 text-xs">Early access</div>
         </div>
       </div>
 
@@ -109,14 +109,14 @@ export function ChatContactForm() {
               className={`flex ${msg.from === "user" ? "justify-end" : "justify-start"}`}
             >
               {msg.from === "llynne" && (
-                <div className="w-7 h-7 rounded-full bg-[#2D6A4F] flex items-center justify-center mr-2 mt-1 flex-shrink-0">
-                  <span className="text-white text-xs font-bold font-[family-name:var(--font-cormorant)] italic">L</span>
+                <div className="w-7 h-7 rounded-full bg-[#1A1A1A] flex items-center justify-center mr-2 mt-1 flex-shrink-0">
+                  <span className="text-white text-xs font-bold font-[family-name:var(--font-cormorant)] italic">R</span>
                 </div>
               )}
               <div
                 className={`max-w-[78%] px-3.5 py-2.5 rounded-2xl text-sm leading-relaxed shadow-sm ${
                   msg.from === "user"
-                    ? "bg-[#C4714F] text-white rounded-br-sm"
+                    ? "bg-[#1DB954] text-white rounded-br-sm"
                     : "bg-white text-[#1C1C1A] rounded-bl-sm"
                 }`}
               >
@@ -134,8 +134,8 @@ export function ChatContactForm() {
               exit={{ opacity: 0 }}
               className="flex items-end gap-2"
             >
-              <div className="w-7 h-7 rounded-full bg-[#2D6A4F] flex items-center justify-center flex-shrink-0">
-                <span className="text-white text-xs font-bold font-[family-name:var(--font-cormorant)] italic">L</span>
+              <div className="w-7 h-7 rounded-full bg-[#1A1A1A] flex items-center justify-center flex-shrink-0">
+                <span className="text-white text-xs font-bold font-[family-name:var(--font-cormorant)] italic">R</span>
               </div>
               <div className="bg-white px-4 py-3 rounded-2xl rounded-bl-sm shadow-sm flex gap-1 items-center">
                 {[0, 1, 2].map((j) => (
@@ -188,13 +188,13 @@ export function ChatContactForm() {
             placeholder={
               questions[step]?.optional ? "Type your message… (optional)" : "Type your answer…"
             }
-            className="flex-1 bg-white border border-[#E0D8CE] rounded-full px-4 py-2 text-sm text-[#1C1C1A] placeholder:text-[#7A7167] outline-none focus:border-[#2D6A4F] transition-colors"
+            className="flex-1 bg-white border border-[#E0D8CE] rounded-full px-4 py-2 text-sm text-[#1C1C1A] placeholder:text-[#7A7167] outline-none focus:border-[#1DB954] transition-colors"
             disabled={typing}
           />
           <button
             onClick={handleSend}
             disabled={typing || (!input.trim() && !questions[step]?.optional)}
-            className="w-9 h-9 rounded-full bg-[#2D6A4F] flex items-center justify-center disabled:opacity-40 hover:bg-[#245940] transition-colors"
+            className="w-9 h-9 rounded-full bg-[#1A1A1A] flex items-center justify-center disabled:opacity-40 hover:bg-[#333] transition-colors"
           >
             <Send size={14} className="text-white" />
           </button>
