@@ -6,34 +6,34 @@ import { ChevronDown } from "lucide-react"
 
 const faqs = [
   {
-    question: "How does booking work with your solution?",
+    question: "Is RAWR free to use?",
     answer:
-      "When a guest leaves a voicemail, our AI reads the request and replies on WhatsApp — asking follow-up questions if needed. It then forwards the booking to your team for validation. No reservation is confirmed without your approval.",
+      "Yes — RAWR is free to download and use. Creating your profile, swiping, and matching are all free. Premium features may be introduced in the future.",
   },
   {
-    question: "Is setup complicated?",
+    question: "Do I need a dog to join?",
     answer:
-      "Not at all. Activation takes a single click — no technical skills required. The system is ready to handle calls immediately.",
+      "Yes! RAWR is built for dog owners. You'll create a profile for yourself and one for your dog — your dog is half the match.",
   },
   {
-    question: "What languages does your AI support?",
+    question: "How does the matching work?",
     answer:
-      "Our AI automatically detects the guest's language — French, English, Spanish, and more — and replies naturally in the same language.",
+      "You browse profiles of dog owners near you and swipe right if you're interested. When both people swipe right, it's a match and you can start chatting.",
   },
   {
-    question: "Does Llynne replace my team?",
+    question: "What breeds are on RAWR?",
     answer:
-      "No — it works alongside your team. The AI handles the basics and forwards reservations for your staff to confirm, freeing them to focus on hospitality.",
+      "All breeds are welcome! From tiny Chihuahuas to gentle giants — every dog finds their match on RAWR.",
   },
   {
-    question: "What are the benefits for a small restaurant?",
+    question: "When is RAWR launching?",
     answer:
-      "Llynne reduces phone stress during service, costs less than an extra hire, and ensures every guest gets a response — even during a rush.",
+      "We're launching soon in Paris, Lyon, London, Berlin, and Amsterdam. Join the waitlist to be the first to know.",
   },
   {
-    question: "Does Llynne integrate with my booking system?",
+    question: "How do I plan a first walk?",
     answer:
-      "Yes. We can connect to any reservation system that provides an API key. Some providers may charge additional fees for API access.",
+      "Once you match, you can chat directly in the app and organise a walk together. Most couples use the built-in suggestions for dog-friendly parks nearby.",
   },
 ]
 
@@ -61,10 +61,10 @@ function FAQItem({
         className="w-full flex items-start justify-between gap-6 py-6 text-left group"
         aria-expanded={isOpen}
       >
-        <span className={`text-xl md:text-2xl font-semibold leading-snug transition-colors duration-200 ${isOpen ? "text-[#1C1C1A]" : "text-[#9CA3AF] group-hover:text-[#C4714F]"}`}>
+        <span className={`text-xl md:text-2xl font-semibold leading-snug transition-colors duration-200 ${isOpen ? "text-[#1C1C1A]" : "text-[#9CA3AF] group-hover:text-[#1DB954]"}`}>
           {faq.question}
         </span>
-        <span className="shrink-0 mt-1 flex h-7 w-7 items-center justify-center rounded-full border border-[#C4714F]/30 bg-[#C4714F]/5 text-[#C4714F] transition-all duration-300 group-hover:bg-[#C4714F]/10">
+        <span className="shrink-0 mt-1 flex h-7 w-7 items-center justify-center rounded-full border border-[#1A1A1A]/30 bg-[#1A1A1A]/5 text-[#1A1A1A] transition-all duration-300 group-hover:bg-[#1A1A1A]/10">
           <ChevronDown className={`h-4 w-4 transition-transform duration-300 ${isOpen ? "rotate-180" : "rotate-0"}`} />
         </span>
       </button>
@@ -93,7 +93,7 @@ export function FAQ() {
   const [openIndex, setOpenIndex] = useState<number | null>(0)
 
   return (
-    <section className="py-20 md:py-28 bg-[#FAF8F5]">
+    <section id="faq" className="py-20 md:py-28 bg-[#FAF8F5]">
       <div className="max-w-4xl mx-auto px-6">
         {/* Header */}
         <motion.header
@@ -103,13 +103,13 @@ export function FAQ() {
           transition={{ duration: 0.6 }}
           className="mb-12 md:mb-16 text-center"
         >
-          <span className="inline-flex items-center px-3 py-1.5 rounded-full bg-[#C4714F]/10 border border-[#C4714F]/20 mb-4">
-            <span className="text-xs font-medium text-[#C4714F]">Frequently asked questions</span>
+          <span className="inline-flex items-center px-3 py-1.5 rounded-full bg-[#1DB954]/10 border border-[#1DB954]/20 mb-4">
+            <span className="text-xs font-medium text-[#1DB954]">Frequently asked questions</span>
           </span>
           <h2 className="font-[family-name:var(--font-cormorant)] text-4xl md:text-5xl lg:text-6xl font-bold text-[#1C1C1A] leading-[0.95]">
             Everything you
             <br />
-            <em className="not-italic text-[#C4714F]">want to know</em>
+            <em className="not-italic text-[#1DB954]">want to know</em>
           </h2>
         </motion.header>
 
