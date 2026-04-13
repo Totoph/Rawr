@@ -7,8 +7,8 @@ export function Footer() {
         <div className="flex flex-col md:flex-row justify-between gap-10 mb-12">
           {/* Brand */}
           <div>
-            <div className="font-[family-name:var(--font-cormorant)] text-2xl font-semibold italic text-[#2D6A4F] mb-2">
-              Llynne
+            <div className="font-[family-name:var(--font-cormorant)] text-2xl font-semibold italic text-[#1DB954] mb-2">
+              RAWR
             </div>
             <p className="text-sm text-white/50">{content.footer.tagline}</p>
           </div>
