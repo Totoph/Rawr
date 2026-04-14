@@ -49,8 +49,8 @@ function CreateProfileScreen() {
       {/* Avatar upload */}
       <div className="flex justify-center mb-3">
         <div className="relative">
-          <div className="w-16 h-16 rounded-full bg-gradient-to-b from-[#F5C842] to-[#E8B83A] flex items-center justify-center text-[36px]">
-            🐶
+          <div className="w-16 h-16 rounded-full overflow-hidden border-2 border-[#F5C842]">
+            <img src="/dogs/dog2.jpg" alt="Bella" className="w-full h-full object-cover object-top" />
           </div>
           <div className="absolute bottom-0 right-0 w-5 h-5 bg-[#3D2314] rounded-full flex items-center justify-center text-[9px] text-white">
             +
@@ -114,8 +114,8 @@ function SwipeScreen() {
       {/* Swipe card */}
       <div className="mx-3 rounded-[20px] overflow-hidden bg-[#F0DFC8] relative flex-1">
         {/* Dog photo */}
-        <div className="h-[195px] bg-gradient-to-b from-[#C8A96E] to-[#F0DFC8] flex items-center justify-center relative">
-          <span className="text-[80px] leading-none">🐕</span>
+        <div className="h-[195px] relative overflow-hidden">
+          <img src="/dogs/labrador.png" alt="Max" className="w-full h-full object-cover object-center" />
           <div className="absolute top-2.5 right-2.5 bg-[#F5C842] text-[#3D2314] text-[8px] font-extrabold px-2 py-0.5 rounded-full">
             1.2 km
           </div>
@@ -185,7 +185,9 @@ function ConversationScreen() {
 
       {/* Chat header */}
       <div className="flex items-center gap-2 px-4 pb-2 border-b border-[#F0DFC8]">
-        <div className="w-7 h-7 rounded-full bg-[#F5C842] flex items-center justify-center text-[13px]">🐕</div>
+        <div className="w-7 h-7 rounded-full overflow-hidden flex-shrink-0">
+          <img src="/dogs/labrador.png" alt="Max" className="w-full h-full object-cover object-center" />
+        </div>
         <div>
           <p className="text-[10px] font-black text-[#3D2314]">Lucas & Max</p>
           <p className="text-[7px] text-[#7A4528]">Active now</p>

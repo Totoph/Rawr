@@ -98,8 +98,8 @@ function DogProfileCard({ animateOut }: { animateOut: boolean }) {
         overflow: "hidden",
       }}
     >
-      <div style={{ height: 200, background: "linear-gradient(135deg, #c8e6c9 0%, #a5d6a7 100%)", position: "relative", flexShrink: 0, display: "flex", alignItems: "center", justifyContent: "center" }}>
-        <span style={{ fontSize: 72 }}>🐕</span>
+      <div style={{ height: 200, position: "relative", flexShrink: 0, overflow: "hidden" }}>
+        <img src="/dogs/labrador.png" alt="Max" style={{ width: "100%", height: "100%", objectFit: "cover", objectPosition: "center top" }} />
         {animateOut && (
           <motion.div
             initial={{ opacity: 0, scale: 0.7 }}
@@ -143,10 +143,10 @@ function DogProfileCard({ animateOut }: { animateOut: boolean }) {
 
         <div style={{ display: "flex", alignItems: "center", gap: 8, paddingTop: 6, borderTop: "1px solid rgba(0,0,0,0.06)" }}>
           <div style={{ width: 28, height: 28, borderRadius: "50%", background: "linear-gradient(135deg, #1A1A1A, #444)", display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0 }}>
-            <span style={{ color: "white", fontSize: 13 }}>S</span>
+            <span style={{ color: "white", fontSize: 13 }}>L</span>
           </div>
           <div>
-            <div style={{ fontSize: 12, fontWeight: 600, color: "#1A1A1A" }}>Sophie, 28</div>
+            <div style={{ fontSize: 12, fontWeight: 600, color: "#1A1A1A" }}>Lucas, 27</div>
             <div style={{ fontSize: 10, color: "#8C8279" }}>Dog lover · Paris</div>
           </div>
         </div>
@@ -279,10 +279,14 @@ export function PhoneAnimation() {
                     style={{ flex: 1, position: "relative", overflow: "hidden", background: "#FAF8F5" }}
                   >
                     <div style={{ position: "absolute", inset: 0, top: 38, transform: "scale(0.94)", transformOrigin: "top center", opacity: 0.6 }}>
-                      <div style={{ position: "absolute", inset: 0, background: "linear-gradient(180deg, #fce4ec 0%, #faf8f5 60%)", display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center" }}>
-                        <span style={{ fontSize: 72 }}>🐩</span>
-                        <div style={{ marginTop: 12, fontSize: 16, fontWeight: 700, color: "#1A1A1A" }}>Luna, 2 y.o.</div>
-                        <div style={{ fontSize: 12, color: "#5C564F" }}>Poodle · 0.8 km</div>
+                      <div style={{ position: "absolute", inset: 0, overflow: "hidden", display: "flex", flexDirection: "column" }}>
+                        <div style={{ flex: 1, overflow: "hidden", position: "relative" }}>
+                          <img src="/dogs/dog2.jpg" alt="Bella" style={{ width: "100%", height: "100%", objectFit: "cover", objectPosition: "center top" }} />
+                        </div>
+                        <div style={{ padding: "8px 12px", background: "#FDF6EC" }}>
+                          <div style={{ fontSize: 14, fontWeight: 700, color: "#3D2314" }}>Bella, 2 y.o.</div>
+                          <div style={{ fontSize: 11, color: "#7A4528" }}>Border Collie · 0.8 km</div>
+                        </div>
                       </div>
                     </div>
                     <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", padding: "8px 14px", background: "#FAF8F5", borderBottom: "1px solid rgba(0,0,0,0.06)", position: "absolute", top: 0, left: 0, right: 0, zIndex: 10 }}>
@@ -314,12 +318,12 @@ export function PhoneAnimation() {
                     ))}
                     <div style={{ display: "flex", alignItems: "center" }}>
                       <motion.div initial={{ x: -40, opacity: 0 }} animate={{ x: 0, opacity: 1 }} transition={{ delay: 0.1, type: "spring", stiffness: 260, damping: 20 }}
-                        style={{ width: 56, height: 56, borderRadius: "50%", background: "linear-gradient(135deg, #a5d6a7, #66bb6a)", border: "3px solid #0f0f0f", display: "flex", alignItems: "center", justifyContent: "center", fontSize: 28, zIndex: 2 }}>
-                        🐕
+                        style={{ width: 56, height: 56, borderRadius: "50%", overflow: "hidden", border: "3px solid #0f0f0f", zIndex: 2, flexShrink: 0 }}>
+                        <img src="/dogs/labrador.png" alt="Max" style={{ width: "100%", height: "100%", objectFit: "cover", objectPosition: "center top" }} />
                       </motion.div>
                       <motion.div initial={{ x: 40, opacity: 0 }} animate={{ x: 0, opacity: 1 }} transition={{ delay: 0.1, type: "spring", stiffness: 260, damping: 20 }}
-                        style={{ width: 56, height: 56, borderRadius: "50%", background: "linear-gradient(135deg, #f8bbd0, #f48fb1)", border: "3px solid #0f0f0f", display: "flex", alignItems: "center", justifyContent: "center", fontSize: 28, marginLeft: -12 }}>
-                        🐩
+                        style={{ width: 56, height: 56, borderRadius: "50%", overflow: "hidden", border: "3px solid #0f0f0f", marginLeft: -12, flexShrink: 0 }}>
+                        <img src="/dogs/dog2.jpg" alt="Bella" style={{ width: "100%", height: "100%", objectFit: "cover", objectPosition: "center top" }} />
                       </motion.div>
                     </div>
                     <motion.div initial={{ opacity: 0, y: 12 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.3 }}
@@ -328,7 +332,7 @@ export function PhoneAnimation() {
                         It&apos;s a Match!
                       </div>
                       <div style={{ fontSize: 11, color: "rgba(255,255,255,0.5)", marginTop: 6 }}>
-                        You and Sophie both liked each other
+                        You and Lucas both liked each other
                       </div>
                     </motion.div>
                     <motion.div initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.5 }}
@@ -347,11 +351,11 @@ export function PhoneAnimation() {
                       <svg width="9" height="15" viewBox="0 0 9 15" fill="none">
                         <path d="M7.5 1.5L1.5 7.5l6 6" stroke="white" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
                       </svg>
-                      <div style={{ width: 34, height: 34, borderRadius: "50%", background: "linear-gradient(135deg, #a5d6a7, #66bb6a)", display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0, fontSize: 18 }}>
-                        🐕
+                      <div style={{ width: 34, height: 34, borderRadius: "50%", overflow: "hidden", flexShrink: 0 }}>
+                        <img src="/dogs/labrador.png" alt="Max" style={{ width: "100%", height: "100%", objectFit: "cover", objectPosition: "center top" }} />
                       </div>
                       <div style={{ flex: 1 }}>
-                        <div style={{ color: "white", fontSize: 13, fontWeight: 600 }}>Sophie & Max</div>
+                        <div style={{ color: "white", fontSize: 13, fontWeight: 600 }}>Lucas & Max</div>
                         <div style={{ color: "rgba(255,255,255,0.5)", fontSize: 10 }}>1.2 km · online</div>
                       </div>
                     </div>
@@ -423,7 +427,7 @@ export function PhoneAnimation() {
                     </motion.div>
                     <motion.div initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.4, duration: 0.36 }}
                       style={{ width: "100%", background: "white", borderRadius: 14, padding: "12px 14px", border: "1px solid rgba(29,185,84,0.15)", boxShadow: "0 2px 10px rgba(0,0,0,0.06)" }}>
-                      {[["With", "Sophie & Max"], ["Date", "Saturday · 10:00 am"], ["Location", "Parc Monceau"]].map(([k, v], i, arr) => (
+                      {[["With", "Lucas & Max"], ["Date", "Saturday · 10:00 am"], ["Location", "Parc Monceau"]].map(([k, v], i, arr) => (
                         <div key={k} style={{ display: "flex", justifyContent: "space-between", paddingBottom: i < arr.length - 1 ? 8 : 0, marginBottom: i < arr.length - 1 ? 8 : 0, borderBottom: i < arr.length - 1 ? "1px solid rgba(0,0,0,0.05)" : "none" }}>
                           <span style={{ fontSize: 10.5, color: "#8C8279", fontWeight: 500, textTransform: "uppercase", letterSpacing: "0.06em" }}>{k}</span>
                           <span style={{ fontSize: 11.5, color: "#1C1C1A", fontWeight: 600 }}>{v}</span>
