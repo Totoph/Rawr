@@ -28,27 +28,18 @@ export function Nav({ logo, links, cta }: NavProps) {
   const handleLinkClick = () => setMobileOpen(false)
 
   return (
-    <header
-      className={`sticky top-0 z-50 border-b border-[#F0DFC8] transition-all duration-300 ${
-        scrolled
-          ? "bg-[rgba(253,246,236,0.92)] backdrop-blur-md"
-          : "bg-[rgba(253,246,236,0.92)] backdrop-blur-md"
-      }`}
-    >
+    <header className={`sticky top-0 z-50 border-b border-black transition-all duration-300 ${scrolled ? "bg-white/95 backdrop-blur-md" : "bg-white"}`}>
       <nav className="px-[10%] h-16 flex items-center justify-between">
         {/* Logo */}
-        <a href="/" className="text-[22px] font-black text-[#3D2314] tracking-tight">
-          {logo}<span className="text-[#E8B83A]">.</span>
+        <a href="/" className="text-[22px] font-black text-black tracking-tight">
+          {logo}<span className="text-[#BC4AD8]">.</span>
         </a>
 
         {/* Desktop links */}
         <ul className="hidden md:flex items-center gap-8">
           {links.map((link) => (
             <li key={link.href}>
-              <a
-                href={link.href}
-                className="text-sm font-semibold text-[#7A4528] hover:text-[#3D2314] transition-colors"
-              >
+              <a href={link.href} className="text-sm font-semibold text-black hover:text-[#BC4AD8] transition-colors">
                 {link.label}
               </a>
             </li>
@@ -58,14 +49,14 @@ export function Nav({ logo, links, cta }: NavProps) {
         {/* Desktop CTA */}
         <a
           href="#waitlist"
-          className="hidden md:inline-flex items-center px-[22px] py-[10px] rounded-full bg-[#3D2314] text-[#F5C842] text-[13px] font-bold hover:bg-[#7A4528] transition-all duration-200 hover:scale-[1.04]"
+          className="hidden md:inline-flex items-center px-[22px] py-[10px] rounded-full bg-[#BC4AD8] text-white text-[13px] font-bold border border-black hover:bg-[#a03abf] transition-all duration-200 hover:scale-[1.04]"
         >
           {cta}
         </a>
 
         {/* Mobile hamburger */}
         <button
-          className="md:hidden p-1.5 text-[#3D2314] rounded-lg hover:bg-black/5 transition-colors"
+          className="md:hidden p-1.5 text-black rounded-lg hover:bg-black/5 transition-colors"
           aria-label={mobileOpen ? "Close menu" : "Open menu"}
           aria-expanded={mobileOpen}
           onClick={() => setMobileOpen((v) => !v)}
@@ -84,14 +75,14 @@ export function Nav({ logo, links, cta }: NavProps) {
 
       {/* Mobile drawer */}
       {mobileOpen && (
-        <div className="md:hidden border-t border-[#F0DFC8] px-[10%] pb-5 pt-3 bg-[#FDF6EC]">
+        <div className="md:hidden border-t border-black px-[10%] pb-5 pt-3 bg-white">
           <ul className="flex flex-col">
             {links.map((link) => (
               <li key={link.href}>
                 <a
                   href={link.href}
                   onClick={handleLinkClick}
-                  className="block py-3 text-sm font-semibold text-[#7A4528] hover:text-[#3D2314] transition-colors border-b border-[#F0DFC8] last:border-0"
+                  className="block py-3 text-sm font-semibold text-black hover:text-[#BC4AD8] transition-colors border-b border-black/10 last:border-0"
                 >
                   {link.label}
                 </a>
@@ -101,7 +92,7 @@ export function Nav({ logo, links, cta }: NavProps) {
           <a
             href="#waitlist"
             onClick={handleLinkClick}
-            className="flex items-center justify-center w-full mt-4 px-5 py-3 rounded-full bg-[#3D2314] text-[#F5C842] text-sm font-bold hover:bg-[#7A4528] transition-colors"
+            className="flex items-center justify-center w-full mt-4 px-5 py-3 rounded-full bg-[#BC4AD8] text-white text-sm font-bold border border-black hover:bg-[#a03abf] transition-colors"
           >
             {cta}
           </a>

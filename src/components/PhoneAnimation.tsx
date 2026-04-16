@@ -92,7 +92,7 @@ function DogProfileCard({ animateOut }: { animateOut: boolean }) {
       style={{
         position: "absolute",
         inset: 0,
-        background: "linear-gradient(180deg, #e8f5e9 0%, #faf8f5 60%)",
+        background: "#FFFFFF",
         display: "flex",
         flexDirection: "column",
         overflow: "hidden",
@@ -108,7 +108,7 @@ function DogProfileCard({ animateOut }: { animateOut: boolean }) {
               position: "absolute",
               top: 16,
               left: 16,
-              background: "#1DB954",
+              background: "#BC4AD8",
               color: "white",
               fontWeight: 800,
               fontSize: 13,
@@ -129,33 +129,33 @@ function DogProfileCard({ animateOut }: { animateOut: boolean }) {
 
       <div style={{ padding: "14px 16px", flex: 1, display: "flex", flexDirection: "column", gap: 8 }}>
         <div style={{ display: "flex", alignItems: "baseline", gap: 8 }}>
-          <span style={{ fontSize: 20, fontWeight: 700, color: "#1A1A1A", fontFamily: "-apple-system, sans-serif" }}>Max</span>
-          <span style={{ fontSize: 13, color: "#5C564F" }}>3 y.o. · Golden Retriever</span>
+          <span style={{ fontSize: 20, fontWeight: 700, color: "#000000", fontFamily: "-apple-system, sans-serif" }}>Max</span>
+          <span style={{ fontSize: 13, color: "#6A4125" }}>3 y.o. · Golden Retriever</span>
         </div>
 
         <div style={{ display: "flex", gap: 5, flexWrap: "wrap" }}>
           {["Playful", "Morning walks", "Loves parks"].map((tag) => (
-            <span key={tag} style={{ fontSize: 10, fontWeight: 600, background: "rgba(29,185,84,0.1)", color: "#17a34a", border: "1px solid rgba(29,185,84,0.25)", borderRadius: 999, padding: "2px 8px" }}>
+            <span key={tag} style={{ fontSize: 10, fontWeight: 600, background: "#D6A6E2", color: "#000000", border: "1px solid #000000", borderRadius: 999, padding: "2px 8px" }}>
               {tag}
             </span>
           ))}
         </div>
 
         <div style={{ display: "flex", alignItems: "center", gap: 8, paddingTop: 6, borderTop: "1px solid rgba(0,0,0,0.06)" }}>
-          <div style={{ width: 28, height: 28, borderRadius: "50%", background: "linear-gradient(135deg, #1A1A1A, #444)", display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0 }}>
+          <div style={{ width: 28, height: 28, borderRadius: "50%", background: "#6A4125", display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0 }}>
             <span style={{ color: "white", fontSize: 13 }}>L</span>
           </div>
           <div>
-            <div style={{ fontSize: 12, fontWeight: 600, color: "#1A1A1A" }}>Lucas, 27</div>
-            <div style={{ fontSize: 10, color: "#8C8279" }}>Dog lover · Paris</div>
+            <div style={{ fontSize: 12, fontWeight: 600, color: "#000000" }}>Lucas, 27</div>
+            <div style={{ fontSize: 10, color: "#6A4125" }}>Dog lover · Paris</div>
           </div>
         </div>
 
         <div style={{ display: "flex", justifyContent: "center", gap: 20, marginTop: "auto", paddingTop: 8 }}>
-          <div style={{ width: 50, height: 50, borderRadius: "50%", background: "white", border: "2px solid #FF3B30", display: "flex", alignItems: "center", justifyContent: "center", boxShadow: "0 4px 14px rgba(255,59,48,0.2)" }}>
+          <div style={{ width: 50, height: 50, borderRadius: "50%", background: "white", border: "2px solid #000000", display: "flex", alignItems: "center", justifyContent: "center" }}>
             <span style={{ fontSize: 22 }}>✕</span>
           </div>
-          <div style={{ width: 50, height: 50, borderRadius: "50%", background: "#1DB954", display: "flex", alignItems: "center", justifyContent: "center", boxShadow: "0 4px 14px rgba(29,185,84,0.35)" }}>
+          <div style={{ width: 50, height: 50, borderRadius: "50%", background: "#BC4AD8", border: "2px solid #000000", display: "flex", alignItems: "center", justifyContent: "center", boxShadow: "0 4px 14px rgba(188,74,216,0.35)" }}>
             <span style={{ fontSize: 22 }}>♥</span>
           </div>
         </div>
@@ -177,10 +177,10 @@ export function PhoneAnimation() {
   }, [visibleMessages, typingSide])
 
   const messages: ChatMessage[] = [
-    { from: "app",  text: "Hey! Your dogs would love each other 🐕" },
-    { from: "user", text: "Haha totally! Want to meet this weekend?" },
-    { from: "app",  text: "Saturday morning at Parc Monceau?" },
-    { from: "user", text: "Perfect, see you at 10am! 🐾" },
+    { from: "app",  text: "Hey! I saw Bella is a Collie 🐕" },
+    { from: "user", text: "Yes! Max would love her 😄" },
+    { from: "app",  text: "Want to meet at Parc Monceau?" },
+    { from: "user", text: "Sunday morning works great! 🐾" },
   ]
 
   useEffect(() => {
@@ -260,7 +260,7 @@ export function PhoneAnimation() {
                     style={{ flex: 1, position: "relative", overflow: "hidden" }}
                   >
                     <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", padding: "8px 14px", background: "#FAF8F5", borderBottom: "1px solid rgba(0,0,0,0.06)", position: "absolute", top: 0, left: 0, right: 0, zIndex: 10 }}>
-                      <span style={{ fontFamily: "var(--font-cormorant), serif", fontSize: 18, fontWeight: 700, fontStyle: "italic", color: "#1DB954" }}>RAWR</span>
+                      <span style={{ fontFamily: "var(--font-poppins), sans-serif", fontSize: 18, fontWeight: 700, fontStyle: "italic", color: "#BC4AD8" }}>RAWR</span>
                       <div style={{ display: "flex", gap: 10 }}>
                         <span style={{ fontSize: 14 }}>🔔</span>
                         <span style={{ fontSize: 14 }}>💬</span>
@@ -290,7 +290,7 @@ export function PhoneAnimation() {
                       </div>
                     </div>
                     <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", padding: "8px 14px", background: "#FAF8F5", borderBottom: "1px solid rgba(0,0,0,0.06)", position: "absolute", top: 0, left: 0, right: 0, zIndex: 10 }}>
-                      <span style={{ fontFamily: "var(--font-cormorant), serif", fontSize: 18, fontWeight: 700, fontStyle: "italic", color: "#1DB954" }}>RAWR</span>
+                      <span style={{ fontFamily: "var(--font-poppins), sans-serif", fontSize: 18, fontWeight: 700, fontStyle: "italic", color: "#BC4AD8" }}>RAWR</span>
                       <div style={{ display: "flex", gap: 10 }}>
                         <span style={{ fontSize: 14 }}>🔔</span>
                         <span style={{ fontSize: 14 }}>💬</span>
@@ -306,29 +306,29 @@ export function PhoneAnimation() {
                   <motion.div key="match"
                     initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}
                     transition={{ duration: 0.4 }}
-                    style={{ flex: 1, background: "#0f0f0f", display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", gap: 16, padding: "20px 20px" }}
+                    style={{ flex: 1, background: "#000000", display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", gap: 16, padding: "20px 20px" }}
                   >
                     {[...Array(8)].map((_, i) => (
                       <motion.div key={i}
                         initial={{ opacity: 0, scale: 0, x: 0, y: 0 }}
                         animate={{ opacity: [0, 1, 0], scale: [0, 1, 0.5], x: Math.cos(i * 45 * Math.PI / 180) * 60, y: Math.sin(i * 45 * Math.PI / 180) * 60 }}
                         transition={{ delay: 0.2 + i * 0.05, duration: 1.2 }}
-                        style={{ position: "absolute", width: 6, height: 6, borderRadius: "50%", background: i % 2 === 0 ? "#1DB954" : "#fff", top: "40%", left: "50%" }}
+                        style={{ position: "absolute", width: 6, height: 6, borderRadius: "50%", background: i % 2 === 0 ? "#BC4AD8" : "#fff", top: "40%", left: "50%" }}
                       />
                     ))}
                     <div style={{ display: "flex", alignItems: "center" }}>
                       <motion.div initial={{ x: -40, opacity: 0 }} animate={{ x: 0, opacity: 1 }} transition={{ delay: 0.1, type: "spring", stiffness: 260, damping: 20 }}
-                        style={{ width: 56, height: 56, borderRadius: "50%", overflow: "hidden", border: "3px solid #0f0f0f", zIndex: 2, flexShrink: 0 }}>
+                        style={{ width: 56, height: 56, borderRadius: "50%", overflow: "hidden", border: "3px solid #000000", zIndex: 2, flexShrink: 0 }}>
                         <img src="/dogs/labrador.png" alt="Max" style={{ width: "100%", height: "100%", objectFit: "cover", objectPosition: "center top" }} />
                       </motion.div>
                       <motion.div initial={{ x: 40, opacity: 0 }} animate={{ x: 0, opacity: 1 }} transition={{ delay: 0.1, type: "spring", stiffness: 260, damping: 20 }}
-                        style={{ width: 56, height: 56, borderRadius: "50%", overflow: "hidden", border: "3px solid #0f0f0f", marginLeft: -12, flexShrink: 0 }}>
+                        style={{ width: 56, height: 56, borderRadius: "50%", overflow: "hidden", border: "3px solid #000000", marginLeft: -12, flexShrink: 0 }}>
                         <img src="/dogs/dog2.jpg" alt="Bella" style={{ width: "100%", height: "100%", objectFit: "cover", objectPosition: "center top" }} />
                       </motion.div>
                     </div>
                     <motion.div initial={{ opacity: 0, y: 12 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.3 }}
                       style={{ textAlign: "center" }}>
-                      <div style={{ fontFamily: "var(--font-cormorant), serif", fontSize: 28, fontWeight: 700, fontStyle: "italic", color: "#1DB954", lineHeight: 1.1 }}>
+                      <div style={{ fontFamily: "var(--font-poppins), sans-serif", fontSize: 28, fontWeight: 700, fontStyle: "italic", color: "#BC4AD8", lineHeight: 1.1 }}>
                         It&apos;s a Match!
                       </div>
                       <div style={{ fontSize: 11, color: "rgba(255,255,255,0.5)", marginTop: 6 }}>
@@ -336,7 +336,7 @@ export function PhoneAnimation() {
                       </div>
                     </motion.div>
                     <motion.div initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.5 }}
-                      style={{ background: "#1DB954", color: "white", fontWeight: 700, fontSize: 13, padding: "10px 28px", borderRadius: 999, cursor: "pointer" }}>
+                      style={{ background: "#BC4AD8", color: "white", fontWeight: 700, fontSize: 13, padding: "10px 28px", borderRadius: 999, cursor: "pointer" }}>
                       Send a message
                     </motion.div>
                   </motion.div>
@@ -347,7 +347,7 @@ export function PhoneAnimation() {
                     initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.3 }}
                     style={{ flex: 1, display: "flex", flexDirection: "column", overflow: "hidden" }}
                   >
-                    <div style={{ display: "flex", alignItems: "center", gap: 8, padding: "6px 12px 8px", background: "#1A1A1A" }}>
+                    <div style={{ display: "flex", alignItems: "center", gap: 8, padding: "6px 12px 8px", background: "#000000", borderBottom: "1px solid rgba(0,0,0,0.1)" }}>
                       <svg width="9" height="15" viewBox="0 0 9 15" fill="none">
                         <path d="M7.5 1.5L1.5 7.5l6 6" stroke="white" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
                       </svg>
@@ -360,7 +360,7 @@ export function PhoneAnimation() {
                       </div>
                     </div>
 
-                    <div ref={scrollRef} style={{ flex: 1, padding: "8px 10px", background: "#EBE0D6", display: "flex", flexDirection: "column", gap: 5, overflowY: "auto", scrollBehavior: "smooth" }}>
+                    <div ref={scrollRef} style={{ flex: 1, padding: "8px 10px", background: "#EFCA9E", display: "flex", flexDirection: "column", gap: 5, overflowY: "auto", scrollBehavior: "smooth" }}>
                       <AnimatePresence>
                         {messages.slice(0, visibleMessages).map((msg, i) => (
                           <motion.div key={i}
@@ -372,13 +372,14 @@ export function PhoneAnimation() {
                             <div style={{
                               maxWidth: "80%", padding: "7px 10px",
                               borderRadius: msg.from === "user" ? "16px 16px 4px 16px" : "16px 16px 16px 4px",
-                              background: msg.from === "user" ? "#DCF8C6" : "#fff",
-                              fontSize: 12, lineHeight: 1.45, color: "#1C1C1A",
-                              boxShadow: "0 1px 2px rgba(0,0,0,0.08)",
+                              background: msg.from === "user" ? "#BC4AD8" : "#ffffff",
+                              color: msg.from === "user" ? "#ffffff" : "#000000",
+                              fontSize: 12, lineHeight: 1.45,
+                              border: "1px solid rgba(0,0,0,0.1)",
                             }}>
                               {msg.text}
                               <div style={{ display: "flex", alignItems: "center", justifyContent: "flex-end", gap: 3, marginTop: 2 }}>
-                                <span style={{ fontSize: 9.5, color: "#8C8279" }}>now</span>
+                                <span style={{ fontSize: 9.5, color: "rgba(0,0,0,0.4)" }}>now</span>
                               </div>
                             </div>
                           </motion.div>
@@ -389,9 +390,9 @@ export function PhoneAnimation() {
                             transition={{ duration: 0.2 }}
                             style={{ display: "flex", justifyContent: typingSide === "right" ? "flex-end" : "flex-start" }}
                           >
-                            <div style={{ padding: "9px 13px", borderRadius: typingSide === "right" ? "16px 16px 4px 16px" : "16px 16px 16px 4px", background: typingSide === "right" ? "#DCF8C6" : "#fff", display: "flex", gap: 4, alignItems: "center", boxShadow: "0 1px 2px rgba(0,0,0,0.08)" }}>
+                            <div style={{ padding: "9px 13px", borderRadius: typingSide === "right" ? "16px 16px 4px 16px" : "16px 16px 16px 4px", background: typingSide === "right" ? "#BC4AD8" : "#ffffff", border: "1px solid rgba(0,0,0,0.1)", display: "flex", gap: 4, alignItems: "center" }}>
                               {[0, 1, 2].map(j => (
-                                <motion.div key={j} style={{ width: 5.5, height: 5.5, borderRadius: "50%", background: "#8C8279" }}
+                                <motion.div key={j} style={{ width: 5.5, height: 5.5, borderRadius: "50%", background: typingSide === "right" ? "#ffffff" : "#6A4125" }}
                                   animate={{ y: [0, -4, 0] }} transition={{ repeat: Infinity, duration: 0.72, delay: j * 0.14, ease: "easeInOut" }} />
                               ))}
                             </div>
@@ -406,12 +407,12 @@ export function PhoneAnimation() {
                   <motion.div key="confirmed"
                     initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}
                     transition={{ duration: 0.38 }}
-                    style={{ flex: 1, background: "#f2f2f7", display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", padding: "20px 22px", gap: 16 }}
+                    style={{ flex: 1, background: "#EFCA9E", display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", padding: "20px 22px", gap: 16 }}
                   >
                     <motion.div
                       initial={{ scale: 0.45, opacity: 0 }} animate={{ scale: 1, opacity: 1 }}
                       transition={{ type: "spring", stiffness: 270, damping: 18, delay: 0.08 }}
-                      style={{ width: 72, height: 72, borderRadius: "50%", background: "linear-gradient(145deg, #1DB954, #17a34a)", display: "flex", alignItems: "center", justifyContent: "center", boxShadow: "0 8px 26px rgba(29,185,84,0.34)" }}
+                      style={{ width: 72, height: 72, borderRadius: "50%", background: "linear-gradient(145deg, #BC4AD8, #a03abf)", display: "flex", alignItems: "center", justifyContent: "center", boxShadow: "0 8px 26px rgba(29,185,84,0.34)" }}
                     >
                       <svg width="34" height="34" viewBox="0 0 34 34" fill="none">
                         <path d="M8 17l6 6 12-12" stroke="white" strokeWidth="2.8" strokeLinecap="round" strokeLinejoin="round" />
@@ -435,7 +436,7 @@ export function PhoneAnimation() {
                       ))}
                     </motion.div>
                     <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.58 }}
-                      style={{ display: "flex", alignItems: "center", gap: 5, fontSize: 11, color: "#1DB954", fontWeight: 600 }}>
+                      style={{ display: "flex", alignItems: "center", gap: 5, fontSize: 11, color: "#BC4AD8", fontWeight: 600 }}>
                       <span>🐾</span>
                       <span>Organised via RAWR</span>
                     </motion.div>

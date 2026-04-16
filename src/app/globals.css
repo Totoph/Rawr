@@ -1,25 +1,21 @@
 @import "tailwindcss";
 
 :root {
-  --cream: #FDF6EC;
-  --brown-dark: #3D2314;
-  --brown-mid: #7A4528;
-  --brown-light: #C4845A;
-  --yellow: #F5C842;
-  --yellow-light: #FFF3C4;
-  --yellow-muted: #E8B83A;
-  --sand: #F0DFC8;
+  --white: #FFFFFF;
+  --black: #000000;
+  --beige: #EFCA9E;
+  --brown: #6A4125;
+  --purple: #BC4AD8;
+  --purple-light: #D6A6E2;
 }
 
 @theme inline {
-  --color-cream: var(--cream);
-  --color-brown-dark: var(--brown-dark);
-  --color-brown-mid: var(--brown-mid);
-  --color-brown-light: var(--brown-light);
-  --color-yellow: var(--yellow);
-  --color-yellow-light: var(--yellow-light);
-  --color-yellow-muted: var(--yellow-muted);
-  --color-sand: var(--sand);
+  --color-white: var(--white);
+  --color-black: var(--black);
+  --color-beige: var(--beige);
+  --color-brown: var(--brown);
+  --color-purple: var(--purple);
+  --color-purple-light: var(--purple-light);
 }
 
 html {
@@ -27,17 +23,16 @@ html {
 }
 
 body {
-  background: var(--cream);
-  color: var(--brown-dark);
+  background: var(--white);
+  color: var(--black);
   font-family: var(--font-poppins), system-ui, sans-serif;
   -webkit-font-smoothing: antialiased;
 }
 
 ::selection {
-  background: #F5C84233;
+  background: #BC4AD833;
 }
 
-/* Hide scrollbar while keeping scrolling functionality */
 .scrollbar-hide {
   -ms-overflow-style: none;
   scrollbar-width: none;
