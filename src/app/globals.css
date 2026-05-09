@@ -27,6 +27,7 @@ body {
   color: var(--black);
   font-family: var(--font-poppins), system-ui, sans-serif;
   -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
 }
 
 ::selection {
@@ -40,4 +41,8 @@ body {
 
 .scrollbar-hide::-webkit-scrollbar {
   display: none;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-playfair), var(--font-poppins), system-ui, sans-serif;
 }

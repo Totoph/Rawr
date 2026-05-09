@@ -1,3 +1,8 @@
+"use client"
+
+import { useRef, useState } from "react"
+import { motion, AnimatePresence, useScroll, useTransform, useMotionValueEvent } from "framer-motion"
+
 interface Step {
   title: string
   desc: string
@@ -256,18 +261,65 @@ function MapScreen() {
   )
 }
 
-/* ─── Section principale ─── */
+/* ─── Timeline Step ─── */
+function TimelineStep({ index, step, isActive, isPast }: {
+  index: number
+  step: Step
+  isActive: boolean
+  isPast: boolean
+}) {
+  return (
+    <div className={`flex gap-5 py-8 transition-opacity duration-300 ${
+      isActive || isPast ? "opacity-100" : "opacity-30"
+    }`}>
+      {/* Number circle */}
+      <div className={`relative z-10 flex-shrink-0 w-10 h-10 rounded-full border-2 flex items-center justify-center font-black text-sm transition-colors duration-300 ${
+        isActive ? "bg-[#BC4AD8] border-[#BC4AD8] text-white" :
+        isPast  ? "bg-white border-[#BC4AD8] text-[#BC4AD8]" :
+                  "bg-white border-black/20 text-black/30"
+      }`}>
+        {String(index + 1).padStart(2, "0")}
+      </div>
+
+      {/* Text */}
+      <div className="pt-1.5">
+        <p className={`font-extrabold text-base leading-tight mb-1 transition-colors duration-300 ${
+          isActive || isPast ? "text-black" : "text-black/40"
+        }`}>{step.title}</p>
+        <p className={`text-sm leading-relaxed transition-colors duration-300 ${
+          isActive || isPast ? "text-[#6A4125]" : "text-[#6A4125]/30"
+        }`}>{step.desc}</p>
+      </div>
+    </div>
+  )
+}
+
 export function AppScreens({ tag, headline, steps }: AppScreensProps) {
+  const containerRef = useRef<HTMLDivElement>(null)
+  const [activeStep, setActiveStep] = useState(0)
+
+  const { scrollYProgress } = useScroll({
+    target: containerRef,
+    offset: ["start start", "end end"],
+  })
+
+  const lineProgress = useTransform(scrollYProgress, [0, 1], ["0%", "100%"])
+
+  useMotionValueEvent(scrollYProgress, "change", (latest) => {
+    setActiveStep(Math.min(3, Math.floor(latest * 4)))
+  })
+
   const screens = [
-    <CreateProfileScreen key="1" />,
-    <SwipeScreen key="2" />,
-    <ConversationScreen key="3" />,
-    <MapScreen key="4" />,
+    <CreateProfileScreen key="create" />,
+    <SwipeScreen key="swipe" />,
+    <ConversationScreen key="conversation" />,
+    <MapScreen key="map" />,
   ]
 
   return (
-    <section id="how-it-works" className="px-[10%] py-20 bg-[#EFCA9E]">
-      <div className="text-center mb-14">
+    <section id="how-it-works" className="bg-white">
+      {/* Header */}
+      <div className="px-[10%] text-center">
         <div className="inline-flex items-center bg-white text-black text-[11px] font-extrabold px-[14px] py-[6px] rounded-full border border-black uppercase tracking-[0.08em] mb-4">
           {tag}
         </div>
@@ -279,23 +331,67 @@ export function AppScreens({ tag, headline, steps }: AppScreensProps) {
         </h2>
       </div>
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-6 items-end max-w-5xl mx-auto">
+      {/* Mobile layout */}
+      <div className="lg:hidden px-[10%] flex flex-col gap-16 pb-20">
         {steps.map((step, i) => (
-          <div key={i} className={`flex flex-col items-center gap-4 ${i === 1 || i === 2 ? "lg:-translate-y-6" : ""}`}>
+          <div key={i} className="flex flex-col items-center gap-6">
             <div className="text-center">
               <div className="inline-flex items-center justify-center w-10 h-10 rounded-full bg-[#BC4AD8] text-white text-[16px] font-black mb-2 border border-black">
                 {String(i + 1).padStart(2, "0")}
               </div>
               <p className="text-[13px] font-extrabold text-black leading-tight">{step.title}</p>
             </div>
-
             {screens[i]}
-
             <p className="text-[12px] text-[#6A4125] leading-relaxed text-center max-w-[180px]">
               {step.desc}
             </p>
           </div>
         ))}
+      </div>
+
+      {/* Desktop scroll-driven layout */}
+      <div ref={containerRef} style={{ height: "400vh" }} className="hidden lg:block">
+        <div className="sticky top-0 h-screen flex items-center px-[10%]">
+          <div className="flex gap-16 w-full max-w-5xl mx-auto items-center">
+            {/* Timeline column */}
+            <div className="relative flex flex-col gap-0 flex-1">
+              {/* Background line */}
+              <div className="absolute left-[19px] top-5 bottom-5 w-[2px] bg-black/10" />
+
+              {/* Progress line */}
+              <motion.div
+                className="absolute left-[19px] top-5 w-[2px] bg-[#BC4AD8] origin-top"
+                style={{ height: lineProgress }}
+              />
+
+              {/* Steps */}
+              {steps.map((step, i) => (
+                <TimelineStep
+                  key={i}
+                  index={i}
+                  step={step}
+                  isActive={activeStep === i}
+                  isPast={activeStep > i}
+                />
+              ))}
+            </div>
+
+            {/* Phone column */}
+            <div className="flex-shrink-0 flex items-center justify-center">
+              <AnimatePresence mode="wait">
+                <motion.div
+                  key={activeStep}
+                  initial={{ opacity: 0, y: 16, scale: 0.97 }}
+                  animate={{ opacity: 1, y: 0, scale: 1 }}
+                  exit={{ opacity: 0, y: -16, scale: 0.97 }}
+                  transition={{ duration: 0.35, ease: [0.25, 0.46, 0.45, 0.94] }}
+                >
+                  {screens[activeStep]}
+                </motion.div>
+              </AnimatePresence>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
   )

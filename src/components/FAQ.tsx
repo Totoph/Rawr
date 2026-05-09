@@ -43,7 +43,7 @@ function FAQAccordionItem({
         <span className={`text-lg md:text-xl font-bold leading-snug transition-colors duration-200 ${isOpen ? "text-black" : "text-[#6A4125] group-hover:text-black"}`}>
           {item.question}
         </span>
-        <span className="shrink-0 mt-1 flex h-7 w-7 items-center justify-center rounded-full border border-black bg-[#D6A6E2] text-black transition-all duration-300 group-hover:bg-[#BC4AD8] group-hover:text-white">
+        <span className="shrink-0 mt-1 flex h-7 w-7 items-center justify-center rounded-full bg-[#D6A6E2] text-black transition-all duration-300 group-hover:bg-[#BC4AD8] group-hover:text-white">
           <ChevronDown className={`h-4 w-4 transition-transform duration-300 ${isOpen ? "rotate-180" : "rotate-0"}`} />
         </span>
       </button>
@@ -81,7 +81,7 @@ export function FAQ({ tag, headline, headlineHighlight, items }: FAQProps) {
           transition={{ duration: 0.6 }}
           className="mb-12 text-center"
         >
-          <div className="inline-flex items-center bg-[#D6A6E2] text-black text-[11px] font-extrabold px-[14px] py-[6px] rounded-full border border-black uppercase tracking-[0.08em] mb-4">
+          <div className="inline-flex items-center bg-[#D6A6E2] text-black text-[11px] font-extrabold px-[14px] py-[6px] rounded-full uppercase tracking-[0.08em] mb-4">
             {tag}
           </div>
           <h2

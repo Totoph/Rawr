@@ -9,12 +9,15 @@ export const homeContent = {
   },
 
   hero: {
-    tag: "🐾 Dating app · For dog owners",
-    headline: "The dating app your dog",
-    headlineHighlight: "approves",
-    headlineEnd: "of.",
+    tag: "",
+    headline: "Rawr.",
+    subheadlineStart: "Because ",
+    subheadlineHighlight1: "your dog",
+    subheadlineMiddle: " was tired of watching you ",
+    subheadlineHighlight2: "be single",
+    subheadlineEnd: ".",
     subheadline:
-      "Create a profile for you and your dog. Swipe, match, and plan your first walk together. Because the best relationships start at the dog park.",
+      "The dating app where your dog is half the match. Find meaningful connections with other dog owners while your pets bond over walks and playtime.",
     ctaPrimary: "See how it works →",
     ctaSecondary: "Join the waitlist",
     socialProof: {

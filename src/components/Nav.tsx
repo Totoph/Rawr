@@ -1,6 +1,7 @@
 "use client"
 
 import { useEffect, useState } from "react"
+import Image from "next/image"
 
 interface NavLink {
   label: string
@@ -20,7 +21,11 @@ export function Nav({ logo, links, cta }: NavProps) {
   useEffect(() => {
     history.scrollRestoration = "manual"
     window.scrollTo(0, 0)
-    const onScroll = () => setScrolled(window.scrollY > 40)
+    const onScroll = () => {
+      if (window.scrollY > 40) {
+        setScrolled(true)
+      }
+    }
     window.addEventListener("scroll", onScroll, { passive: true })
     return () => window.removeEventListener("scroll", onScroll)
   }, [])
@@ -28,15 +33,30 @@ export function Nav({ logo, links, cta }: NavProps) {
   const handleLinkClick = () => setMobileOpen(false)
 
   return (
-    <header className={`sticky top-0 z-50 border-b border-black transition-all duration-300 ${scrolled ? "bg-white/95 backdrop-blur-md" : "bg-white"}`}>
-      <nav className="px-[10%] h-16 flex items-center justify-between">
+    <header className={`fixed top-8 z-50 rounded-2xl py-4 transition-all duration-500 ease-out bg-white/40 border backdrop-blur-xl`} style={{
+        left: scrolled ? '5%' : '50%',
+        right: scrolled ? '5%' : 'auto',
+        transform: scrolled ? 'translateX(0)' : 'translateX(-50%)',
+        width: scrolled ? 'auto' : 'auto',
+        borderColor: scrolled ? 'rgba(255, 255, 255, 0.3)' : 'rgba(255, 255, 255, 0.2)',
+        boxShadow: scrolled ? '0 8px 32px rgba(0, 0, 0, 0.1)' : 'none',
+        paddingLeft: scrolled ? '3rem' : '2rem',
+        paddingRight: scrolled ? '3rem' : '2rem',
+      }}>
+      <nav className={`h-auto flex items-center transition-all duration-500 ease-out ${scrolled ? "justify-between gap-20" : "justify-center"}`}>
         {/* Logo */}
-        <a href="/" className="text-[22px] font-black text-black tracking-tight">
-          {logo}<span className="text-[#BC4AD8]">.</span>
+        <a href="/" className="flex items-center h-10">
+          <Image
+            src="/assets/logo/Plan de travail 1LogoRawr_Noir.png"
+            alt="Rawr"
+            height={40}
+            width={80}
+            className="object-contain"
+          />
         </a>
 
         {/* Desktop links */}
-        <ul className="hidden md:flex items-center gap-8">
+        <ul className={`hidden md:flex items-center gap-8 transition-all duration-500 ${scrolled ? "opacity-100" : "opacity-0 hidden"}`}>
           {links.map((link) => (
             <li key={link.href}>
               <a href={link.href} className="text-sm font-semibold text-black hover:text-[#BC4AD8] transition-colors">
@@ -49,7 +69,7 @@ export function Nav({ logo, links, cta }: NavProps) {
         {/* Desktop CTA */}
         <a
           href="#waitlist"
-          className="hidden md:inline-flex items-center px-[22px] py-[10px] rounded-full bg-[#BC4AD8] text-white text-[13px] font-bold border border-black hover:bg-[#a03abf] transition-all duration-200 hover:scale-[1.04]"
+          className={`hidden md:inline-flex items-center px-[22px] py-[10px] rounded-full bg-[#BC4AD8] text-white text-[13px] font-bold hover:bg-[#a03abf] transition-all duration-500 hover:scale-[1.04] ${scrolled ? "opacity-100" : "opacity-0 hidden"}`}
         >
           {cta}
         </a>
@@ -92,7 +112,7 @@ export function Nav({ logo, links, cta }: NavProps) {
           <a
             href="#waitlist"
             onClick={handleLinkClick}
-            className="flex items-center justify-center w-full mt-4 px-5 py-3 rounded-full bg-[#BC4AD8] text-white text-sm font-bold border border-black hover:bg-[#a03abf] transition-colors"
+            className="flex items-center justify-center w-full mt-4 px-5 py-3 rounded-full bg-[#BC4AD8] text-white text-sm font-bold hover:bg-[#a03abf] transition-colors"
           >
             {cta}
           </a>
